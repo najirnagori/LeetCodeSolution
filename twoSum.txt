@@ -1,0 +1,16 @@
+// Leetcode two problem solution
+
+
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    var hashMap: [Int: Int] = [:]
+    for i in 0..<nums.count {
+        let firstNum = target - nums[i]
+        if let secondeNum = hashMap[firstNum] {
+            return [secondeNum, i]
+        }
+        hashMap[nums[i]] = i
+    }
+    return []
+}
+}
